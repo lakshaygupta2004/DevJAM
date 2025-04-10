@@ -1,6 +1,6 @@
 # 🚀 DevJAM – Jam Together. Code Forever.
 
-![DevJAM Banner](https://github.com/lakshaygupta2004/devjam/logo.svg)
+![DevJAM Banner](./assets/logo.svg)
 
 **DevJAM** is a full-stack collaborative code editor designed for developers and teams to jam together in real time — just like a musical jam, but with code 🎸💻
 
@@ -23,7 +23,7 @@
 
 ## 📸 Preview
 
-![Preview](https://github.com/lakshaygupta2004/devjam/preview.png)
+![Preview](./assets/preview.png)
 
 ---
 
