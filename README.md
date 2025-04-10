@@ -16,8 +16,8 @@
 
 ## 🌐 Live Demo
 
-- **Client** (Frontend): [devjam.vercel.app](https://devjam.vercel.app)
-- **Server** (Backend): [Render Link](https://your-api-url.com)
+- **Client** (Frontend): [devjam.vercel.app](https://dev-jam-jade.vercel.app/)
+- **Server** (Backend): [Render Link](https://devjam-backend.onrender.com)
 
 ---
 
