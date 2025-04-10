@@ -1,6 +1,6 @@
 # 🚀 DevJAM – Jam Together. Code Forever.
 
-![DevJAM Banner](./assets/logo.svg)
+![DevJAM Banner](./assets/logo.png)
 
 **DevJAM** is a full-stack collaborative code editor designed for developers and teams to jam together in real time — just like a musical jam, but with code 🎸💻
 
