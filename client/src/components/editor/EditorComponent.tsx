@@ -5,30 +5,33 @@ import Editor from "./Editor"
 import FileTab from "./FileTab"
 
 function EditorComponent() {
-    const { openFiles } = useFileSystem()
-    const { minHeightReached } = useResponsive()
+  const { openFiles } = useFileSystem()
+  const { minHeightReached } = useResponsive()
 
-    if (openFiles.length <= 0) {
-        return (
-            <div className="flex h-full w-full items-center justify-center">
-                <h1 className="text-xl text-white">
-                    No file is currently open.
-                </h1>
-            </div>
-        )
-    }
-
+  if (openFiles.length <= 0) {
     return (
-        <main
-            className={cn("flex w-full flex-col overflow-x-auto md:h-screen", {
-                "h-[calc(100vh-50px)]": !minHeightReached,
-                "h-full": minHeightReached,
-            })}
-        >
-            <FileTab />
-            <Editor />
-        </main>
+      <div className="flex h-full w-full items-center justify-center bg-devjam text-devjam-text dark:bg-white dark:text-devjam transition-colors">
+        <h1 className="text-xl font-medium opacity-80">
+          No file is currently open.
+        </h1>
+      </div>
     )
+  }
+
+  return (
+    <main
+      className={cn(
+        "flex w-full flex-col overflow-x-auto bg-devjam text-devjam-text dark:bg-white dark:text-devjam transition-all",
+        {
+          "h-[calc(100vh-50px)]": !minHeightReached,
+          "h-full": minHeightReached,
+        }
+      )}
+    >
+      <FileTab />
+      <Editor />
+    </main>
+  )
 }
 
 export default EditorComponent

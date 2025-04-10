@@ -4,101 +4,122 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .view-title {
-        @apply mb-2 w-full border-b pb-2 text-start text-lg;
-    }
+/* ========================== */
+/*      DEVJAM BRAND COLORS   */
+/* ========================== */
+:root {
+  --devjam-bg: #f7f2ff;
+  --devjam-text: #2d1a45;
+  --devjam-primary: #7c3aed;
+  --devjam-accent: #b794f4;
+  --devjam-hover: #e9ddff;
+  --sb-track-color: #2d1a45;
+  --sb-thumb-color: #a56cf5;
+  --sb-size: 6px;
 }
 
 body {
-    font-family: "Space Grotesk", sans-serif;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-
-    --sb-track-color: #3d404a;
-    --sb-thumb-color: #e1e1ffb3;
-    --sb-size: 6px;
+  font-family: "Space Grotesk", sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: var(--devjam-bg);
+  color: var(--devjam-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ========================== */
+/*     Tailwind Components    */
+/* ========================== */
+@layer components {
+  .view-title {
+    @apply mb-2 w-full border-b border-devjam-accent pb-2 text-start text-lg font-semibold;
+  }
+}
+
+/* ========================== */
+/*     Scrollbar Styling      */
+/* ========================== */
 ::-webkit-scrollbar {
-    width: var(--sb-size);
-    height: var(--sb-size);
+  width: var(--sb-size);
+  height: var(--sb-size);
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--sb-track-color);
-    border-radius: 5px;
-    height: var(--sb-size);
-    width: var(--sb-size);
+  background: var(--sb-track-color);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--sb-thumb-color);
-    border-radius: 5px;
-    height: var(--sb-size);
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
 }
 
 @supports not selector(::-webkit-scrollbar) {
-    body {
-        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
-    }
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
 
+/* ========================== */
+/*      Animations            */
+/* ========================== */
 @keyframes up-down {
-    0% {
-        transform: translateY(-20px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
+  0% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-/* Editor */
+.animate-up-down {
+  animation: up-down 2s ease-in-out infinite alternate;
+}
 
+/* ========================== */
+/*         Editor             */
+/* ========================== */
 .cm-editor {
-    max-height: 93vh;
+  max-height: 93vh;
 }
-
 .cm-editor .cm-scroller {
-    font-family: "Space Mono", monospace;
-    /* min-height: 100vh; */
-}
-
-select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
+  font-family: "Space Mono", monospace;
 }
 
 @media screen and (max-width: 768px) {
-    .cm-editor {
-        max-height: calc(93vh - 60px);
-    }
-
-    .cm-editor .cm-scroller {
-        min-height: calc(93vh - 60px);
-    }
+  .cm-editor {
+    max-height: calc(93vh - 60px);
+  }
+  .cm-editor .cm-scroller {
+    min-height: calc(93vh - 60px);
+  }
 }
 
-/* Github Corner */
+/* ========================== */
+/*        Select Styles       */
+/* ========================== */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
 
+/* ========================== */
+/*     GitHub Corner Wave     */
+/* ========================== */
 .github-corner:hover .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
+  animation: octocat-wave 560ms ease-in-out;
 }
-
 @keyframes octocat-wave {
-    0%,
-    100% {
-        transform: rotate(0);
-    }
-    20%,
-    60% {
-        transform: rotate(-25deg);
-    }
-    40%,
-    80% {
-        transform: rotate(10deg);
-    }
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
 }
